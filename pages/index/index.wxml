@@ -1,0 +1,9 @@
+<!--index.wxml-->
+<view class="head">
+   <!--<text class="text">距离考试\n</text>-->
+    <text class="date">{{countDate}}</text>
+    <text>天\n</text>
+   <text class="text">考试时间：2018年3月17日</text>
+</view>
+
+
