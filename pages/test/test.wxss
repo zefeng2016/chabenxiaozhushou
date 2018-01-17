@@ -1,7 +1,4 @@
 /* pages/test/test.wxss */
-.content{
-  padding: 30rpx;
-}
 
 .body {
   background: #2e3b58;
@@ -12,46 +9,57 @@
   bottom: 0px;
   padding: 20rpx;
   margin: 0px;
+
   color: white;
   font-size: 18pt;
-
 }
-.nextBtn{
+
+.nextBtn {
   text-align: center;
   margin-top: 80rpx;
   width: 600rpx;
 }
 
-.trueNum{
+.trueNum {
   font-size: 14pt;
-  color: #888888;
+  color: #888;
   margin-top: 60rpx;
 }
-.errorNum{
+
+.errorNum {
   font-size: 14pt;
-  color: #888888;
+  color: #888;
+  padding-bottom: 20rpx;
 }
-.error{
+
+.error {
   font-size: 13pt;
-  position:absolute;
+  position: absolute;
   right: 20rpx;
-  color: #888888;
+  color: #888;
 }
-.errorThs{
+
+/* .errorThs{
 
   width: 100%;
   text-align: center;
   position: absolute;
   bottom: 160rpx;
+ 
+} */
+
+ .ans {
+  margin-top: 20rpx;
+}
+/*
+.service_selection .is_checked {
+  border: 1px solid #fe0002;
+  color: #fe0002;
+  background: #fff;
 }
 
-.service_selection .is_checked{ 
- border: 1px solid #FE0002 ; 
- color: #FE0002 ; 
- background: #fff; 
-} 
-.service_selection .normal{ 
- border: none; 
- color: #333; 
- background: #F0F1EC; 
-} 
+.service_selection .normal {
+  border: none;
+  color: #333;
+  background: #f0f1ec;
+} */

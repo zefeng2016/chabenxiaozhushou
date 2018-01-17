@@ -1,5 +1,9 @@
 //app.js
 App({
+
+  data: {
+    perCheckNum:0
+  },
   onLaunch: function () {
     require('./sdk-v1.1.4.js')
     

@@ -17,7 +17,7 @@ Page({
     now.setTime(now.getTime() + 250);
     var days = (urodz - now) / 1000 / 60 / 60 / 24;
     var daysRound = Math.floor(days);
-    console.log('tianshu: ' + daysRound)
+   
     this.setData({
       countDate: daysRound,
     })
@@ -28,7 +28,7 @@ Page({
     let Product = new wx.BaaS.TableObject(tableID)
     Product.get(recordID).then((res) => {
       // success
-      console.log(res.data)
+     
       this.setData({
         content: res.data.content,
         author: res.data.author
@@ -41,7 +41,7 @@ Page({
     })
   },
   startCheck: function (event) {
-    console.log(event)
+    
     wx.navigateTo({
       url: '/pages/test/test',
     })
