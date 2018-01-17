@@ -1,20 +1,74 @@
 /**index.wxss**/
 
+.body {
+  background: #2e3b58;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  padding: 0px;
+  margin: 0px;
+}
 
-.head{
+.time {
+  margin-top: 30rpx;
   width: 100%;
-  height: 220px;
+  height: 480rpx;
   text-align: center;
-  background-color: #2E3B58;
- 
+  background-color: #2e3b58;
+  color: #fff;
+}
 
-  color: #fff
+.date {
+  font-size: 80pt;
+  padding: 0rpx;
+  margin: 0rpx;
+}
+
+.day {
+ 
+  height: 180rpx;
+  position: relative;
+  bottom:-18rpx;
+  /* padding-top: 60px; */
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  background-color: #2e3b58;
+  color: #fff;
+  text-indent: 2rem;
+}
+
+.content {
+  text-align: left;
+}
+
+.author {
+  float: right;
+}
+
+
+.checking{
+  position: relative;
+  bottom: -60rpx;
+  text-align: center;
+  color: #fff;
+}
+.check_box{
+  margin-top: 10rpx;
+  width:600rpx;
+  background-color: #09bb07;
+  color: #fff;
   
 }
-.date{
-  font-size: 120px;
- 
-}
-.text{
- 
+
+.copyrigh {
+  margin: auto;
+  position: absolute;
+  bottom: 4px;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  font-size: 12pt;
 }

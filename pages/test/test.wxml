@@ -1,0 +1,36 @@
+<view class='body'>
+  <text>1.</text>
+  <text>【{{year}}年】</text>
+  <text>{{content}}</text>
+
+  <!-- <radio-group wx:for="{{array}}">
+    <view>
+      <radio disabled="true">{{item.message}}</radio>
+    </view>
+  </radio-group> -->
+
+  <radio-group class="radio-group" bindchange="radioChange">
+    <label class="radio" wx:for="{{items}}">
+      <view>
+        <radio  disabled="{{isDisabled}}" value="{{item.name}}" checked="{{item.checked}}" />{{item.value}}</view>
+    </label> 
+  </radio-group>
+
+
+  
+
+  <view wx:if="{{answerDisplay}}">答案：A \n 主要是我也不知道主要是我也不知道主要是我也不知道主要是我也不知道主要是我也不知道主要是我也不知道主要是我也不知道主要是我也不知道主要是我也不知道主要是我也不知道</view>
+  <view class='error' bindtap="errorBtn" wx:if="{{answerDisplay}}">报错</view>
+
+  <view wx:if="{{nextBtnDisplay}}">
+    <button  class='nextBtn'>下一题</button>
+  </view>
+  <view class='trueNum'>
+    <icon type="success" size="20" color="green" /> 本轮答对{{trueNum}}题
+  </view>
+  <view class='errorNum'>
+    <icon type="cancel" size="20" color="red"  /> 本轮答错{{errorNum}}题
+  </view>
+
+
+</view>

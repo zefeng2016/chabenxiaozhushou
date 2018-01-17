@@ -4,35 +4,47 @@ var app = getApp()
 Page({
   data: {
     countDate: 0,
-    hours:0,
-    min:0
+    content:'时间是一切财富中最宝贵的财富富中最宝贵的财富富中最宝贵的财富。',
+    author:'德奥弗拉斯多',
+    allCheckNum:0,
+    perCheckNum:0,
   },
-
   //事件处理函数
   onLoad: function () {
-   
-  var now = new Date();  
+    //获取倒计时时间
+    var now = new Date();
     var urodz = new Date("3/17/2018 00:00:00");//设定倒计时的时间  
-
     now.setTime(now.getTime() + 250);
     var days = (urodz - now) / 1000 / 60 / 60 / 24;
     var daysRound = Math.floor(days);
-    var hours = (urodz - now) / 1000 / 60 / 60 - (24 * daysRound);
-    var hoursRound = Math.floor(hours);
-    var minutes = (urodz - now) / 1000 / 60 - (24 * 60 * daysRound) - (60 * hoursRound);
-    var minutesRound = Math.floor(minutes);
-    // var seconds = (urodz - now) / 1000 - (24 * 60 * 60 * daysRound) - (60 * 60 * hoursRound) - (60 * minutesRound);
-    // var secondsRound = Math.round(seconds);
-
-
-
     console.log('tianshu: ' + daysRound)
-
     this.setData({
-        countDate : daysRound,
-        hours:hoursRound,
-        min:minutesRound
+      countDate: daysRound,
     })
 
+    //获取每日一签
+    let tableID = 22478
+    let recordID = '5a5eaed108443e253891191c'
+    let Product = new wx.BaaS.TableObject(tableID)
+    Product.get(recordID).then((res) => {
+      // success
+      console.log(res.data)
+      this.setData({
+        content: res.data.content,
+        author: res.data.author
+      })
+     
+
+
+    }, (err) => {
+      // err
+    })
+  },
+  startCheck: function (event) {
+    console.log(event)
+    wx.navigateTo({
+      url: '/pages/test/test',
+    })
+    
   }
 })

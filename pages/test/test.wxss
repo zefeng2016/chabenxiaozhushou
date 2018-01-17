@@ -1,0 +1,57 @@
+/* pages/test/test.wxss */
+.content{
+  padding: 30rpx;
+}
+
+.body {
+  background: #2e3b58;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  padding: 20rpx;
+  margin: 0px;
+  color: white;
+  font-size: 18pt;
+
+}
+.nextBtn{
+  text-align: center;
+  margin-top: 80rpx;
+  width: 600rpx;
+}
+
+.trueNum{
+  font-size: 14pt;
+  color: #888888;
+  margin-top: 60rpx;
+}
+.errorNum{
+  font-size: 14pt;
+  color: #888888;
+}
+.error{
+  font-size: 13pt;
+  position:absolute;
+  right: 20rpx;
+  color: #888888;
+}
+.errorThs{
+
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  bottom: 160rpx;
+}
+
+.service_selection .is_checked{ 
+ border: 1px solid #FE0002 ; 
+ color: #FE0002 ; 
+ background: #fff; 
+} 
+.service_selection .normal{ 
+ border: none; 
+ color: #333; 
+ background: #F0F1EC; 
+} 

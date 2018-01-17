@@ -1,9 +1,27 @@
 <!--index.wxml-->
-<view class="head">
-   <!--<text class="text">距离考试\n</text>-->
+
+<view class="body">
+  <view class="time">
+    <text class="text">距离考试\n</text>
     <text class="date">{{countDate}}</text>
     <text>天\n</text>
-   <text class="text">考试时间：2018年3月17日</text>
+    <text class="text">考试时间：2018年3月17日</text>
+  </view>
+
+  <view class='day'>
+    <text class='content'>{{content}}\n</text>
+    <text class='author'>——{{author}}</text>
+  </view>
+
+  <view class='checking'>
+  <text class='check_num'>已经有{{allCheckNum}}人刷题，你已刷题{{perCheckNum}}道</text>
+  <button class='check_box' bindtap='startCheck'>开始刷题</button>
+  </view>
+
+
+
+  <view class='copyrigh'>
+    <text>©TECH郑泽丰</text>
+  </view>
+
 </view>
-
-

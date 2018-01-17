@@ -1,5 +1,7 @@
 {
     "navigationBarTextStyle": "white",
     "navigationBarBackgroundColor": "#2E3B58",
-    "navigationBarTitleText": "距离考试"
+    "navigationBarTitleText": "插本小助手",
+    "backgroundColor": "#2E3B58",
+    "enablePullDownRefresh": false
 }
