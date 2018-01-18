@@ -1,6 +1,6 @@
 <view class='body'>
   <text>{{cnt}}.</text>
-  <text>【{{year}}年】</text>
+  <!-- <text>【{{year}}年】</text> -->
   <text>{{content}}</text>
 
   <!-- <radio-group wx:for="{{array}}">
@@ -20,7 +20,7 @@
 
 
   <view class='ans' wx:if="{{answerDisplay}}">
-    <text>答案：{{trueSelect}} \n {{ansText}}</text>
+    <text>答案：{{trueSelect}} \n 解释：{{ansText}}</text>
 
   </view>
   <view class='error' bindtap="errorBtn" wx:if="{{answerDisplay}}">报错</view>

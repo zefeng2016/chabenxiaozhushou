@@ -1,6 +1,7 @@
 // pages/test/test.js
 var upadta_test = require('../updata_test.js')
-var testList = []
+// var testList = []
+var app = getApp()
 function getUpTest () {
 
 }
@@ -59,22 +60,22 @@ Page({
       answerDisplay: false,
       isDisabled: false,
     })
-    console.log("panduyan"+testList.length)
-    if (testList.length == 0) {
+    console.log("panduyan"+app.testList.length)
+    if (app.testList.length == 0) {
       let tableID = 22549
       var Product = new wx.BaaS.TableObject(tableID)
       var query = new wx.BaaS.Query()
       Product.setQuery(query).limit(10).offset(0).find().then((res) => {
         // success
-        testList = res.data.objects
-        console.log("1题库还有" + testList.length)
+        app.testList = res.data.objects
+        console.log("1题库还有" + app.testList.length)
         var cunt = this.data.cnt + 1
         this.setData({
           cnt: cunt
         })
-        var test = testList.shift()
+        var test = app.testList.shift()
         console.log("本试题内容+" + test)
-        console.log("2题库还有" + testList.length)
+        console.log("2题库还有" + app.testList.length)
         this.setData({
           trueSelect: test.answer,
           year: test.year,
@@ -95,7 +96,7 @@ Page({
       this.setData({
         cnt: cunt
       })
-      var test = testList.shift()
+      var test = app.testList.shift()
       this.setData({
         trueSelect: test.answer,
         year: test.year,
@@ -104,6 +105,7 @@ Page({
         isDisabled: false,
         ansText: test.detailedAnswer
       })
+      wx.hideLoading()
     }
   },
 
@@ -177,21 +179,21 @@ Page({
         isDisabled: false,
         
       })
-      if (testList.length == 0) {
+      if (app.testList.length == 0) {
         let tableID = 22549
         var Product = new wx.BaaS.TableObject(tableID)
         var query = new wx.BaaS.Query()
         Product.setQuery(query).limit(10).offset(0).find().then((res) => {
           // success
-          testList = res.data.objects
-          console.log("1题库还有" + testList.length)
+          app.testList = res.data.objects
+          console.log("1题库还有" + app.testList.length)
           var cunt = this.data.cnt + 1
           this.setData({
             cnt:cunt
           })
-          var test = testList.shift()
+          var test = app.testList.shift()
           console.log("本试题内容+" + test)
-          console.log("2题库还有" + testList.length)
+          console.log("2题库还有" + app.testList.length)
           this.setData({
             trueSelect: test.answer,
             year: test.year,
@@ -212,16 +214,22 @@ Page({
         this.setData({
           cnt: cunt
         })
-        var test = testList.shift()
-        this.setData({
-          trueSelect: test.answer,
-          year: test.year,
-          content: test.content,
-          items: test.selectList,
-          isDisabled: false,
-          ansText: test.detailedAnswer
-        })
+        var test = app.testList.shift()
+        var that = this;  
+        setTimeout(function () {
+          that.setData({
+            trueSelect: test.answer,
+            year: test.year,
+            content: test.content,
+            items: test.selectList,
+            isDisabled: false,
+            ansText: test.detailedAnswer
+          })
+          
+        }, 500)
+        
       }
+      
     }
     else {
       console.log('选错了')
@@ -247,22 +255,22 @@ Page({
       answerDisplay: false,
       isDisabled: false,
     })
-    if (testList.length == 0) {
+    if (app.testList.length == 0) {
       let tableID = 22549
       var Product = new wx.BaaS.TableObject(tableID)
       var query = new wx.BaaS.Query()
       Product.setQuery(query).limit(10).offset(0).find().then((res) => {
         // success
 
-        testList = res.data.objects
-        console.log("1题库还有" + testList.length)
+        app.testList = res.data.objects
+        console.log("1题库还有" + app.testList.length)
         var cunt = this.data.cnt + 1
         this.setData({
           cnt: cunt
         })
-        var test = testList.shift()
+        var test = app.testList.shift()
         console.log("本试题内容+"+test)
-        console.log("2题库还有" + testList.length)
+        console.log("2题库还有" + app.testList.length)
         this.setData({
           trueSelect: test.answer,
           year: test.year,
@@ -278,12 +286,12 @@ Page({
       })
     }
     else {
-      console.log("else1题库还有" + testList.length)
+      console.log("else1题库还有" + app.testList.length)
       var cunt = this.data.cnt + 1
       this.setData({
         cnt: cunt
       })
-      var test = testList.shift()
+      var test = app.testList.shift()
       this.setData({
         trueSelect: test.answer,
         year: test.year,
@@ -295,7 +303,7 @@ Page({
      
     
       console.log("本试题内容+" + test)
-      console.log("2题库还有" + testList.length)
+      console.log("2题库还有" + app.testList.length)
     }
     wx.hideLoading()
   },
